@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000; /* to set navbar always on top */
+}
+
+.navbar a {
+  display: block;
+  color: black;
+  font-family: avenir-lt-w01_35-light1475496, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid rgb(0, 0, 0); /* Adjust color and thickness as needed */
+  color: black;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.resume {
+  transition: transform .2s; /* Animation */
+  padding-top: 900px;
+  max-width: 180%; /* Adjust as needed */
+  max-height: 180%; /* Adjust as needed */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.download {
+  background-color: rgb(39, 37, 37);
+  color: white;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 16px;
+  display: block;
+}

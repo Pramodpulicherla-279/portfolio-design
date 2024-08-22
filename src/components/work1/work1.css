@@ -1,0 +1,155 @@
+
+
+body {
+    margin: 0;
+    background-color: black;
+    border-radius: 100px;
+    width: 90%;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+}
+.title{
+    font-size: 48px;
+    line-height: 1.0834933333;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    text-transform: uppercase; /* This line will make all text uppercase */
+
+}
+.desc1{
+    font-size: 20px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+   margin: 100px auto 0 100px;
+    padding-right: 800px;
+    padding-bottom: 100px;
+    color: white;
+
+}
+.desc2{
+    font-size: 20px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-bottom: 100px;
+    position: relative;
+   margin: 100px 100px 0 auto;
+    padding-left: 800px;
+    color: white;
+
+}
+.desc3{
+    font-size: 20px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-bottom: 200px;
+    position: relative;
+   margin: 100px auto 0 100px;
+    padding-right: 800px;
+    color: white;
+
+}
+.container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 202vh;
+    background-color: rgba(227, 227, 227, 0.771);
+    border: none;
+    border-radius: 36px;
+    
+    
+}
+
+.lists-container {
+    width: 100%;
+    margin-left: 100px;
+    margin-top: -80px;
+    display: flex;
+    justify-content: space-around; /* This will space out the lists evenly */
+}
+
+.list-1, .list-2 {
+    flex: 1; /* This makes each list take up equal space */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    
+   
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+}
+.list-title{
+    text-align: center;
+    justify-content: center;
+    font-size: 36px;
+    line-height: 1.0834933333;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase; /* This line will make all text uppercase */
+}
+.section-divider {
+    
+    width: 80%;
+    height: 1.5px; /* Thickness of the divider */
+    background-color: #ffffff; /* Color of the divider */
+    margin: 20px auto; /* Space above and below the divider */
+}
+.objective-title{
+    text-align: center;
+    justify-content: center;
+
+    font-size: 36px;
+    line-height: 1.0834933333;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    padding-bottom: 50px;
+
+    margin: 50px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase; /* This line will make all text uppercase */
+}
+.list-3 {
+    flex: 1; /* This makes each list take up equal space */
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    
+   
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+}
+li {
+    margin-bottom: 10px; /* Adjust the value to increase or decrease the gap */
+}
+.lists-container2 {
+    width: 100%;
+    margin-left: 100px;
+    margin-top: -80px;
+    display: flex;
+    justify-content: space-around; /* This will space out the lists evenly */
+}
