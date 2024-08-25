@@ -11,6 +11,19 @@ const Home = () => {
   };
 
   useEffect(() => {
+  // Smooth scroll
+  const handleScroll = (event, target) => {
+    event.preventDefault();
+    document.querySelector(target).scrollIntoView({ behavior: "smooth" });
+  };
+
+  document.querySelectorAll(".navbar a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      handleScroll(e, href);
+    });
+  });
+  
     $(".navbar a[href='#Home']").on("click", function (e) {
       e.preventDefault();
       $("html, body").animate(
@@ -58,29 +71,42 @@ const Home = () => {
       navbar.style.display = navbar.style.display === "none" ? "flex" : "none";
     });
 
-    window.addEventListener("scroll", function () {
-      const containers = document.querySelectorAll(
-        ".work2-container, .work3-container"
-      );
-      const links = document.querySelectorAll(".navbar a");
+      // Set initial color to white
+  const links = document.querySelectorAll(".navbar a");
+  links.forEach((link) => {
+    link.style.color = "white";
+  });
 
-      function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom >= 0;
-      }
+     // Function to check if an element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
 
-      let anyContainerInView = false;
+  // Scroll event listener to change navbar text color based on section
 
-      containers.forEach((container) => {
-        if (isInViewport(container)) {
-          anyContainerInView = true;
+    window.addEventListener("scroll", ()=> {
+      const whiteSections = document.querySelectorAll(".white-section");
+  
+      let isWhiteSectionInView = false;
+  
+      whiteSections.forEach((section) => {
+        if (isInViewport(section)) {
+          isWhiteSectionInView = true;
         }
       });
-
+  
+      // Change navbar text color based on the white section's visibility
       links.forEach((link) => {
-        link.style.color = anyContainerInView ? "white" : "black";
+        link.style.color = isWhiteSectionInView ? "white" : "black";
       });
     });
+
+    // Clean up the scroll event listener on component unmount
+  return () => {
+    window.removeEventListener("scroll", this);
+  };
+    
   }, []);
 
   return (
@@ -101,27 +127,61 @@ const Home = () => {
       </div>
 
       <div className="header" id="home">
+        <div className="header-left">
         <div className="bio">
           <h1>Hi 👋, my name is</h1>
           <h1 className="name">PRAMOD.</h1>
         </div>
-        <h1>
-          <br />
-          <span className="Description">
+        <h1 className="Description">
             I'm a UI/UX Designer, I Design Web and Mobile Applications, Digital
             products, I'm here to turn your dreams into focused and clear
             products.
-          </span>
+          
         </h1>
         <div className="tools">
-              <img src="/images/html.png" alt="html" className="tool-icon" />
-              <img src="/images/css.png" alt="css" className="tool-icon" />
-              <img src="/images/js.png" alt="js" className="tool-icon" />
-              <img src="/images/reactjs.png" alt="reactjs" className="tool-icon" />
-              <img src="/images/figma.png" alt="Figma" className="tool-icon" />
-              <img src="/images/photoshop.png" alt="Photoshop" className="tool-icon" />
-              <img src="/images/ai.jpg" alt="adobe illustrator" className="tool-icon" />
-            </div>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/html.png`}
+            alt="html"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/css.png`}
+            alt="css"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/js.png`}
+            alt="js"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/reactjs.png`}
+            alt="reactjs"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/figma.png`}
+            alt="Figma"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/photoshop.png`}
+            alt="Photoshop"
+            className="tool-icon"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/ai.jpg`}
+            alt="adobe illustrator"
+            className="tool-icon"
+          />
+        </div>
+        </div>
+        <div class="blob">
+        </div>
+        
+        
+       
+        
       </div>
       <h1 className="skills-heading">SKILLS</h1>
       <div className="section-divider"></div>
@@ -230,14 +290,18 @@ const Home = () => {
               across all devices.
             </p>
             <div className="tools">
-              <img src="/images/figma.png" alt="Figma" className="tool-icon" />
               <img
-                src="/images/photoshop.png"
+                src={`${process.env.PUBLIC_URL}/images/figma.png`}
+                alt="Figma"
+                className="tool-icon"
+              />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/photoshop.png`}
                 alt="Photoshop"
                 className="tool-icon"
               />
               <img
-                src="/images/ai.jpg"
+                src={`${process.env.PUBLIC_URL}/images/ai.jpg`}
                 alt="adobe illustrator"
                 className="tool-icon"
               />
@@ -251,7 +315,7 @@ const Home = () => {
                   className="github-button"
                 >
                   <img
-                    src="/images/github-mark.png"
+                    src={`${process.env.PUBLIC_URL}/images/github-mark.png`}
                     alt="GitHub"
                     className="icon"
                   />
@@ -287,20 +351,24 @@ const Home = () => {
               enhance user engagement.
             </p>
             <div className="tools">
-              <img src="/images/html.png" alt="Figma" className="tool-icon" />
               <img
-                src="/images/css.png"
-                alt="Photoshop"
+                src={`${process.env.PUBLIC_URL}/images/html.png`}
+                alt="html"
                 className="tool-icon"
               />
               <img
-                src="/images/js.png"
-                alt="adobe illustrator"
+                src={`${process.env.PUBLIC_URL}/images/css.png`}
+                alt="css"
                 className="tool-icon"
               />
               <img
-                src="/images/reactjs.png"
-                alt="adobe illustrator"
+                src={`${process.env.PUBLIC_URL}/images/js.png`}
+                alt="js"
+                className="tool-icon"
+              />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/reactjs.png`}
+                alt="reactjs"
                 className="tool-icon"
               />
             </div>
@@ -313,7 +381,7 @@ const Home = () => {
                   className="github-button"
                 >
                   <img
-                    src="/images/github-mark.png"
+                    src={`${process.env.PUBLIC_URL}/images/github-mark.png`}
                     alt="GitHub"
                     className="icon"
                   />
@@ -349,14 +417,18 @@ const Home = () => {
               across all devices.
             </p>
             <div className="tools">
-              <img src="/images/figma.png" alt="Figma" className="tool-icon" />
               <img
-                src="/images/photoshop.png"
+                src={`${process.env.PUBLIC_URL}/images/figma.png`}
+                alt="Figma"
+                className="tool-icon"
+              />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/photoshop.png`}
                 alt="Photoshop"
                 className="tool-icon"
               />
               <img
-                src="/images/ai.jpg"
+                src={`${process.env.PUBLIC_URL}/images/ai.jpg`}
                 alt="adobe illustrator"
                 className="tool-icon"
               />
@@ -370,7 +442,7 @@ const Home = () => {
                   className="github-button"
                 >
                   <img
-                    src="/images/github-mark.png"
+                    src={`${process.env.PUBLIC_URL}/images/github-mark.png`}
                     alt="GitHub"
                     className="icon"
                   />
@@ -388,12 +460,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-/* add more items here */
+          {/* add more items here */}
       </div>
       <div className="footer" id="home">
-        <h1 className="desc-footer">
-          Thanks for stopping by my portfolio!
-        </h1>
+        <h1 className="desc-footer">Thanks for stopping by my portfolio!</h1>
         <h1 className="hitme">
           Do I have your Attention? <br />
           hit me up :)

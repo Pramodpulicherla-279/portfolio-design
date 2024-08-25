@@ -19,18 +19,17 @@ body {
   }
 }
 
-.bio {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin-top: 50px;
-  padding-bottom: 2px;
+/*  */
+.bio{
+  font-size: 10px;
 }
-
 .name {
+  font-family: "League Spartan", sans-serif;
 
-  font-size: 55px;
+  font-size: 66px;
+  font-optical-sizing: auto;
+  font-weight: 20px;
+  font-style: normal;
 }
 
 .navbar {
@@ -42,8 +41,8 @@ body {
 .navbar a {
   float: right;
   display: block;
-  color: black;
-  font-family: avenir-lt-w01_35-light1475496, sans-serif;
+  color: white;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 12px;
   font-weight: bold;
   text-align: center;
@@ -52,25 +51,43 @@ body {
 }
 
 .navbar a:hover {
-  border-bottom: 3px solid rgb(0, 0, 0); /* Adjust color and thickness as needed */
-  color: black;
+  border-bottom: 3px solid rgb(255, 255, 255); /* Adjust color and thickness as needed */
+  color: rgb(255, 255, 255);
 }
 
 .header {
-  max-width: 100%;
-  background: linear-gradient(270deg, #fff6d1, #d1ffce, #f0cbff, #c1fffb);
+  display: flex;
+  justify-content: space-between;
+  /* background: linear-gradient(270deg, #fff6d1, #d1ffce, #f0cbff, #c1fffb); */
+  background: linear-gradient(270deg, #606060, #533750, #1e1e1e, #392743);
+
   background-size: 800% 800%;
   animation: Gradient 15s ease infinite;
   border-radius: 32px;
   border: none;
-  margin: 8px 0px;
-  padding: 115px;
-  padding-right: 700px;
-  font-family: palatino linotype, serif;
-  text-align: left;
-  color: black;
+  margin: 8px 8px;
+  padding: 208px 32px;
+  
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+.header-left {
+  padding-left: 140px;
+  max-width: 60%; /* Adjusts the width of the left side */
 }
 
+.blob{
+  background-image: url('./image.png');
+  width: 300px;
+  height: 300px;
+  background-size: 160%; /* Scale the image to fit within the container */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+  background-position : center center;
+  box-shadow: 0 5px 5px 5px rgba(201, 13, 253, 0.399)  ;
+  animation: animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+  margin-right: 140px;
+}
 @media (max-width: 1200px) {
   .header {
     padding: 80px;
@@ -87,9 +104,111 @@ body {
 
 @media (max-width: 480px) {
   .header {
-    padding: 40px;
+    max-width: 100%;
+    padding: 20px;
     padding-right: 100px;
     text-align: center;
+  }
+  .blob {
+    width: 200px;
+    height: 200px;
+    margin-right: 40px;
+  }
+  .Description {
+    font-size: 1em;
+  }
+  .tools {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tool-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .skills-container {
+    padding: 20px;
+  }
+  .lists-container {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .work-container {
+    width: 90%;
+    padding: 10px;
+  }
+  .work-item1, .work-item2 {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  .rectangle1, .rectangle2, .rectangle3 {
+    height: 200px;
+  }
+  .image-container img {
+    width: 100%;
+  }
+  .desc {
+    font-size: 12px;
+  }
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .github-button {
+    padding: 4px 8px;
+  }
+  .live-demo-button {
+    padding: 6px 12px;
+  }
+  .contact-form input[type="text"], .contact-form input[type="email"], .contact-form textarea {
+    padding: 8px;
+  }
+  .contact-form button {
+    padding: 10px 16px;
+  }
+  .footer {
+    /* padding: 40px; */
+    padding-right: 200px;
+    text-align: center;
+  }
+}
+
+
+.Description {
+  width: 80%;
+  margin: 0 0 20px 0; /* Margin under description */
+    font-size: 1.25em; /* Slightly larger font for description */
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  
+ 
+  
+  position: relative; /* Add this line if not already positioned */
+  top: 0px; /* Adjust this value as needed to move upwards */
+}
+
+.tools {
+  display: flex;
+  gap: 30px; /* Space between tool icons */
+  margin-top: 10px; /* Space between buttons and tool icons */
+}
+
+.tool-icon {
+  width: 24px; /* Adjust icon size as needed */
+  height: 24px; /* Adjust icon size as needed */
+}
+
+
+
+@keyframes animate{
+  0%, 100%{
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50%{
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
 }
 
@@ -279,16 +398,7 @@ li {
   color: #333; /* Adjust text color as needed */
 }
 
-.tools {
-  display: flex;
-  gap: 10px; /* Space between tool icons */
-  margin-top: 10px; /* Space between buttons and tool icons */
-}
 
-.tool-icon {
-  width: 24px; /* Adjust icon size as needed */
-  height: 24px; /* Adjust icon size as needed */
-}
 
 .buttons {
   margin-top: 24px; /* Space between description and buttons */
@@ -359,26 +469,18 @@ li {
   width: 100%;
 }
 
-.Description {
-  padding-left: 200px;
-  color: #355c7d;
-  font-family: "Fira Code", monospace;
-  font-weight: 600;
-  font-size: 20px;
-  position: relative; /* Add this line if not already positioned */
-  top: -60px; /* Adjust this value as needed to move upwards */
-}
+
 
 .desc-footer {
   font-size: 18px;
   font-weight: lighter;
-  font-family: palatino linotype, serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
 .hitme {
   padding-top: 50px;
   font-size: 40px;
-  font-family: palatino linotype, serif;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   padding-bottom: 50px;
 }
 
@@ -394,7 +496,7 @@ li {
 
 .footer {
   max-width: 100%;
-  height: 400px;
+  height: auto;
   border-radius: 32px;
   border: none;
   padding: 120px;

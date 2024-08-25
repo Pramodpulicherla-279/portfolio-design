@@ -39,7 +39,7 @@ const Resume = () => {
       </div>
 
       <div className="center-container">
-        <img className="resume" src="/images/resume.png" alt="resume" />
+        <img className="resume" src={`${process.env.PUBLIC_URL}/images/resume.png`} alt="resume" />
       </div>
     </div>
   );
