@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+📖 **Digital Library with NFT-Signed Assets**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A decentralized Digital Library where contributors create AI-generated images, sign them with NFTs, and protect ownership rights.
+Each contributor’s creativity is tokenized and secured, ensuring exclusive ownership while preventing unauthorized access.
 
-## Available Scripts
+✨ **Features**
 
-In the project directory, you can run:
+🎨 AI-Powered Creativity – Contributors generate images using AI prompts.
 
-### `npm start`
+🔗 NFT-Signed Assets – Every image is minted as an NFT on the Cardano blockchain.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🔒 Ownership Protection – Contributors cannot access or duplicate others’ digital assets.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🌍 Decentralized Library – Transparent, immutable, and verifiable on-chain records.
 
-### `npm test`
+📂 Secure Metadata Storage – Assets linked to IPFS/DB with CIP-25 metadata standard.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🏗️ **Tech Stack**
 
-### `npm run build`
+Frontend → Next.js + React + Tailwind CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Blockchain → Cardano + MeshJS + Blockfrost API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Smart Contract → Plutus Minting Policy (NFT signing logic)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Storage → IPFS / Database for metadata + assets
 
-### `npm run eject`
+Backend → Node.js / FastAPI (API handling)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔄** Workflow**
+![workflow - image](./workflow.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🚀** How It Works**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-- Contributor creates an AI prompt → Generates unique image.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-- Image is minted as NFT (using MeshJS + Cardano).
 
-## Learn More
+-- Metadata stored via CIP-25 standard (IPFS + Blockchain).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-- Contributor owns signed NFT in their wallet.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+-- Digital assets are protected → No cross-access between contributors.
 
-### Code Splitting
+🤝 **Contributors**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-- We welcome all creative contributors to join and showcase their AI + NFT-powered artworks.
 
-### Analyzing the Bundle Size
+-- Submit your AI-generated image
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-- Mint via provided DApp
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-- Showcase in Digital Library
