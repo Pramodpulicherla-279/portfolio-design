@@ -1,0 +1,203 @@
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.nav--scrolled {
+  border-bottom-color: var(--border);
+}
+
+/* The blurred backdrop lives on a pseudo-element on purpose: `backdrop-filter`
+   on .nav itself would make it the containing block for the position:fixed
+   mobile menu, collapsing the menu to the height of the header. */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nav--scrolled::before {
+  opacity: 1;
+}
+
+.nav__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  height: 72px;
+}
+
+/* Brand ------------------------------------------------------- */
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1px solid var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform 0.25s ease;
+}
+
+.nav__brand:hover .nav__mark {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+.nav__brand-dot {
+  color: var(--accent);
+}
+
+/* Links ------------------------------------------------------- */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav__links > a:not(.nav__cta) {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav__links > a:not(.nav__cta):hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.nav__links > a.is-active {
+  color: var(--accent);
+}
+
+.nav__num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+.nav__cta {
+  margin-left: 10px;
+  padding: 9px 18px;
+  font-size: 0.85rem;
+}
+
+/* Actions ----------------------------------------------------- */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav__icon-btn {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav__icon-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  transform: translateY(-1px);
+}
+
+.nav__burger {
+  display: none;
+}
+
+/* Mobile ------------------------------------------------------ */
+@media (max-width: 860px) {
+  .nav__burger {
+    display: grid;
+  }
+
+  .nav__links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    /* 100dvh accounts for mobile browser chrome; vh is the fallback. */
+    height: calc(100vh - 72px);
+    height: calc(100dvh - 72px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 24px 20px calc(40px + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  }
+
+  .nav__links.is-open {
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__links > a:not(.nav__cta) {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 1.1rem;
+    padding: 16px 14px;
+    border-radius: 12px;
+  }
+
+  /* Divider between links only — never above the résumé button. */
+  .nav__links > a:not(.nav__cta) + a:not(.nav__cta) {
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .nav__links .nav__num {
+    width: 28px;
+    font-size: 0.8rem;
+  }
+
+  .nav__cta {
+    margin: 24px 0 0;
+    padding: 15px 26px;
+    font-size: 0.95rem;
+  }
+}

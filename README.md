@@ -1,53 +1,70 @@
-📖 **Digital Library with NFT-Signed Assets**
+# Pramod Pulicherla — Portfolio
 
-A decentralized Digital Library where contributors create AI-generated images, sign them with NFTs, and protect ownership rights.
-Each contributor’s creativity is tokenized and secured, ensuring exclusive ownership while preventing unauthorized access.
+Personal portfolio for **Pramod Pulicherla**, SDET and full-stack developer. Built with React 19
+and Vite, deployed to GitHub Pages.
 
-✨ **Features**
+**Live:** https://Pramodpulicherla-279.github.io/portfolio-design/
 
-🎨 AI-Powered Creativity – Contributors generate images using AI prompts.
+## Tech stack
 
-🔗 NFT-Signed Assets – Every image is minted as an NFT on the Cardano blockchain.
+- **React 19** + **Vite 6**
+- Plain CSS with custom properties (light/dark theming, no UI framework)
+- `react-icons` for iconography
+- `gh-pages` for deployment
 
-🔒 Ownership Protection – Contributors cannot access or duplicate others’ digital assets.
+## Getting started
 
-🌍 Decentralized Library – Transparent, immutable, and verifiable on-chain records.
+```bash
+npm install
+npm run dev
+```
 
-📂 Secure Metadata Storage – Assets linked to IPFS/DB with CIP-25 metadata standard.
+The dev server runs on http://localhost:3000.
 
-🏗️ **Tech Stack**
+## Scripts
 
-Frontend → Next.js + React + Tailwind CSS
+| Script            | What it does                                 |
+| ----------------- | -------------------------------------------- |
+| `npm run dev`     | Start the Vite dev server                    |
+| `npm run build`   | Production build into `dist/`                |
+| `npm run preview` | Serve the production build locally           |
+| `npm run deploy`  | Build and publish `dist/` to the `gh-pages` branch |
 
-Blockchain → Cardano + MeshJS + Blockfrost API
+## Project structure
 
-Smart Contract → Plutus Minting Policy (NFT signing logic)
+```
+index.html                 Vite entry HTML
+vite.config.js             base path for GitHub Pages, dev server config
+public/
+  Pramod-Pulicherla-SDET.pdf   downloadable résumé
+  favicon.svg
+src/
+  main.jsx                 React root
+  App.jsx                  section composition
+  index.css                design tokens, reset, shared primitives
+  data/profile.js          ALL résumé content lives here
+  hooks/
+    useReveal.js           IntersectionObserver scroll reveal
+    useTheme.js            light/dark toggle, persisted to localStorage
+  components/
+    Nav / Hero / About / Skills / Experience / Projects / Education / Contact
+    ScrollProgress
+```
 
-Storage → IPFS / Database for metadata + assets
+## Updating content
 
-Backend → Node.js / FastAPI (API handling)
+Everything the site displays — summary, skills, experience bullets, projects, education, contact
+details — comes from [`src/data/profile.js`](src/data/profile.js). Edit that one file; the
+components render whatever it contains.
 
-🔄** Workflow**
-![workflow - image](./workflow.png)
+To swap the résumé PDF, replace `public/Pramod-Pulicherla-SDET.pdf` and update `profile.resumeFile`
+if the filename changes.
 
-🚀** How It Works**
+## Deploying
 
--- Contributor creates an AI prompt → Generates unique image.
+```bash
+npm run deploy
+```
 
--- Image is minted as NFT (using MeshJS + Cardano).
-
--- Metadata stored via CIP-25 standard (IPFS + Blockchain).
-
--- Contributor owns signed NFT in their wallet.
-
--- Digital assets are protected → No cross-access between contributors.
-
-🤝 **Contributors**
-
--- We welcome all creative contributors to join and showcase their AI + NFT-powered artworks.
-
--- Submit your AI-generated image
-
--- Mint via provided DApp
-
--- Showcase in Digital Library
+`vite.config.js` sets `base: '/portfolio-design/'` to match the repository name. If the repo is ever
+renamed, or the site moves to a custom domain, update that value.

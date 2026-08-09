@@ -1,0 +1,127 @@
+.xp {
+  position: relative;
+  padding-left: 30px;
+}
+
+.xp::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(var(--accent-line), var(--border), transparent);
+}
+
+.xp__item {
+  position: relative;
+}
+
+.xp__item + .xp__item {
+  margin-top: 26px;
+}
+
+.xp__marker {
+  position: absolute;
+  left: -30px;
+  top: 26px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 2px solid var(--accent);
+}
+
+.xp__card {
+  padding: 28px 28px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.xp__card:hover {
+  border-color: var(--accent-line);
+  box-shadow: var(--shadow);
+}
+
+.xp__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.xp__role {
+  font-size: 1.25rem;
+}
+
+.xp__at {
+  color: var(--text-faint);
+  font-weight: 400;
+}
+
+.xp__company {
+  color: var(--accent);
+}
+
+.xp__period {
+  margin-top: 7px;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.02em;
+}
+
+.xp__sep {
+  margin-inline: 9px;
+  opacity: 0.6;
+}
+
+.xp__badge {
+  padding: 5px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.xp__points li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--text-dim);
+  font-size: 0.93rem;
+}
+
+.xp__points li + li {
+  margin-top: 12px;
+}
+
+.xp__points li::before {
+  content: '▸';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 560px) {
+  .xp {
+    padding-left: 22px;
+  }
+  .xp__marker {
+    left: -22px;
+  }
+  .xp__card {
+    padding: 22px 20px;
+  }
+}
