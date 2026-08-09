@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Pramod Pulicherla',
-  shortName: 'Pramoddddddddddddd',
+  shortName: 'Pramod',
   initials: 'PP',
   role: 'SDET',
   roleLong: 'SDET & Full-Stack Developer',
