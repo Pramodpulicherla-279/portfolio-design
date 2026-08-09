@@ -28,7 +28,6 @@ The dev server runs on http://localhost:3000.
 | `npm run dev`     | Start the Vite dev server                    |
 | `npm run build`   | Production build into `dist/`                |
 | `npm run preview` | Serve the production build locally           |
-| `npm run deploy`  | Build and publish `dist/` to the `gh-pages` branch |
 
 ## Project structure
 
@@ -62,9 +61,14 @@ if the filename changes.
 
 ## Deploying
 
-```bash
-npm run deploy
-```
+Deployment is automatic. Every push to `main` triggers
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which runs `npm ci`, `npm run build`
+and publishes `dist/` straight to GitHub Pages. There is no manual step and no `gh-pages` branch —
+Pages is configured with **Source: GitHub Actions**.
+
+To re-deploy without pushing a commit, run the workflow from the repository's **Actions** tab
+(it allows `workflow_dispatch`).
 
 `vite.config.js` sets `base: '/portfolio-design/'` to match the repository name. If the repo is ever
-renamed, or the site moves to a custom domain, update that value.
+renamed, or the site moves to a custom domain, update that value — a wrong `base` is the usual cause
+of a blank deployed page, since every asset URL is built from it.
