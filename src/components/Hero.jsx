@@ -72,7 +72,6 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero__glow" aria-hidden="true" />
-      <div className="hero__grid-bg" aria-hidden="true" />
 
       <div className="container hero__inner">
         <div className="hero__content">
@@ -87,7 +86,7 @@ export default function Hero() {
 
           <p className="hero__role reveal" style={{ transitionDelay: '120ms' }}>
             <span className="hero__role-tag">SDET</span>
-            <span className="hero__role-sep">/</span>
+            <span className="hero__role-sep" aria-hidden="true">/</span>
             <span className="hero__role-tag">Full-Stack Developer</span>
           </p>
 

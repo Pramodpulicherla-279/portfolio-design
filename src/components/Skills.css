@@ -7,22 +7,23 @@
 .skills__card {
   position: relative;
   padding: 26px 24px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .skills__card:hover {
-  border-color: var(--border-strong);
+  border-color: var(--line-strong);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 .skills__card--featured {
   grid-column: 1 / -1;
   background: linear-gradient(
     140deg,
-    color-mix(in srgb, var(--accent) 7%, var(--surface)),
+    color-mix(in srgb, var(--accent) 5%, var(--surface)),
     var(--surface) 55%
   );
   border-color: var(--accent-line);
@@ -35,7 +36,7 @@
   gap: 16px;
   padding-bottom: 18px;
   margin-bottom: 18px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--line);
 }
 
 .skills__card-head h3 {
@@ -45,15 +46,16 @@
 .skills__caption {
   margin-top: 5px;
   font-size: 0.74rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .skills__count {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--border-strong);
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--ghost);
   line-height: 1;
 }
 

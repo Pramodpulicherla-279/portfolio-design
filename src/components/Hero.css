@@ -1,35 +1,25 @@
 .hero {
   position: relative;
-  padding-top: 148px;
-  padding-bottom: 72px;
+  padding-top: 168px;
+  padding-bottom: 84px;
   overflow: hidden;
 }
 
+/* A single soft wash of warmth instead of the old technical grid. */
 .hero__glow {
   position: absolute;
-  top: -220px;
-  right: -180px;
-  width: 720px;
-  height: 720px;
+  top: -260px;
+  right: -220px;
+  width: 780px;
+  height: 780px;
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--accent) 22%, transparent) 0%,
-    transparent 62%
+    color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+    color-mix(in srgb, var(--accent-2) 8%, transparent) 45%,
+    transparent 68%
   );
-  filter: blur(30px);
-  pointer-events: none;
-}
-
-.hero__grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 64px 64px;
-  opacity: 0.35;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 20%, transparent 75%);
+  filter: blur(50px);
   pointer-events: none;
 }
 
@@ -37,7 +27,7 @@
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 56px;
+  gap: 64px;
   align-items: center;
 }
 
@@ -45,88 +35,85 @@
 .hero__available {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 6px 14px 6px 11px;
+  gap: 10px;
+  padding: 7px 16px 7px 12px;
   border-radius: 99px;
-  border: 1px solid var(--accent-line);
-  background: var(--accent-soft);
-  color: var(--accent);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  margin-bottom: 24px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 28px;
 }
 
 .hero__pulse {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 0 var(--accent);
-  animation: pulse 2s infinite;
+  animation: pulse 2.4s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
   }
   70% {
-    box-shadow: 0 0 0 8px transparent;
-  }
-  100% {
-    box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 7px transparent;
   }
 }
 
 .hero__name {
-  font-size: clamp(2.5rem, 6.2vw, 4.1rem);
-  letter-spacing: -0.035em;
-  line-height: 1.02;
+  font-size: clamp(2.7rem, 6.6vw, 4.5rem);
+  letter-spacing: -0.028em;
+  line-height: 1.0;
+  font-weight: 300;
+  font-variation-settings: 'opsz' 144, 'SOFT' 0;
 }
 
 .hero__role {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
-  margin-top: 14px;
-  font-size: clamp(1rem, 2.2vw, 1.3rem);
-  font-weight: 600;
-  color: var(--text-dim);
+  margin-top: 18px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: var(--ink-soft);
 }
 
 .hero__role-tag {
-  background: linear-gradient(92deg, var(--accent), var(--accent-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent-deep);
 }
 
 .hero__role-sep {
-  color: var(--text-faint);
+  color: var(--line-strong);
   font-weight: 300;
 }
 
 .hero__typed {
-  margin-top: 18px;
-  font-size: 0.92rem;
-  color: var(--text-faint);
+  margin-top: 20px;
+  font-size: 0.84rem;
+  color: var(--ink-faint);
   min-height: 1.6em;
+  letter-spacing: 0.01em;
 }
 
 .hero__typed-prefix {
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
-.hero__cursor,
-.runner__caret {
+.hero__cursor {
   display: inline-block;
-  width: 8px;
-  height: 1.05em;
+  width: 7px;
+  height: 1em;
   margin-left: 3px;
   vertical-align: text-bottom;
   background: var(--accent);
-  animation: blink 1.1s steps(2, start) infinite;
+  animation: blink 1.2s steps(2, start) infinite;
 }
 
 @keyframes blink {
@@ -136,63 +123,65 @@
 }
 
 .hero__tagline {
-  margin-top: 20px;
-  max-width: 48ch;
-  color: var(--text-dim);
-  font-size: 1.02rem;
+  margin-top: 24px;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+  font-weight: 300;
+  line-height: 1.72;
 }
 
 .hero__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 22px;
-  margin-top: 22px;
-  font-size: 0.86rem;
-  color: var(--text-faint);
+  gap: 10px 24px;
+  margin-top: 26px;
+  font-size: 0.84rem;
+  color: var(--ink-faint);
 }
 
 .hero__meta span,
 .hero__meta a {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  transition: color 0.2s ease;
+  gap: 8px;
+  transition: color 0.22s ease;
 }
 
 .hero__meta a:hover {
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+  margin-top: 34px;
 }
 
 .hero__socials {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 32px;
-  font-size: 1.15rem;
-  color: var(--text-faint);
+  gap: 18px;
+  margin-top: 36px;
+  font-size: 1.05rem;
+  color: var(--ink-faint);
 }
 
 .hero__socials a {
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.22s ease, transform 0.22s ease;
 }
 
 .hero__socials a:hover {
-  color: var(--accent);
-  transform: translateY(-3px);
+  color: var(--accent-deep);
+  transform: translateY(-2px);
 }
 
 .hero__socials-line {
   flex: 1;
-  max-width: 120px;
+  max-width: 110px;
   height: 1px;
-  background: var(--border-strong);
+  background: var(--line-strong);
 }
 
 /* Portrait ---------------------------------------------------- */
@@ -210,7 +199,8 @@
 /* The morphing organic blob from the original portfolio. The photo lives
    *inside* it and is clipped by it, so the visible boundary is always the
    blob's own curve — the keyed edge of the cut-out is never on show, which is
-   what keeps its grain invisible against a light background. */
+   what keeps its grain invisible. On pale paper the dark fill is doing double
+   duty: hiding that edge, and anchoring the composition. */
 @keyframes portrait-morph {
   0%,
   100% {
@@ -226,15 +216,15 @@
   z-index: 1;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: var(--portrait-blob);
+  background-color: var(--portrait-blob);
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  animation: portrait-morph 8s ease-in-out infinite;
-  box-shadow: 0 6px 30px 6px color-mix(in srgb, var(--accent) 32%, transparent);
+  animation: portrait-morph 9s ease-in-out infinite;
+  box-shadow: var(--shadow-lg);
   transition: box-shadow 0.5s ease-in-out;
 }
 
 .portrait:hover .portrait__blob {
-  box-shadow: 0 8px 42px 10px color-mix(in srgb, var(--accent) 48%, transparent);
+  box-shadow: 0 4px 10px rgba(74, 62, 45, 0.08), 0 34px 62px -18px rgba(74, 62, 45, 0.3);
 }
 
 .portrait__img {
@@ -242,15 +232,13 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .portrait:hover .portrait__img {
   transform: scale(1.04);
 }
 
-/* Sits on the page background now, not on the photo, so it needs to read as a
-   solid chip rather than a glass overlay. */
 .portrait__badge {
   position: absolute;
   left: 0;
@@ -258,69 +246,67 @@
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 14px;
+  gap: 9px;
+  padding: 8px 15px;
   border-radius: 99px;
-  border: 1px solid var(--accent-line);
-  background: var(--surface);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
   box-shadow: var(--shadow);
-  color: var(--text);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .portrait__badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--accent);
 }
 
-/* Stats ------------------------------------------------------- */
+/* Stats — hairline rule, no boxes. */
 .hero__stats {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  margin-top: 72px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--border);
-  overflow: hidden;
+  margin-top: 88px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
 }
 
 .hero__stats li {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 24px 22px;
-  background: var(--bg-soft);
-  transition: background 0.25s ease;
+  gap: 6px;
+  padding-right: 24px;
 }
 
-.hero__stats li:hover {
-  background: var(--surface-2);
+.hero__stats li + li {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
 }
 
 .hero__stat-value {
-  font-size: 1.85rem;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 300;
   letter-spacing: -0.03em;
-  color: var(--accent);
-  font-family: var(--font-mono);
+  line-height: 1;
+  color: var(--ink);
 }
 
 .hero__stat-label {
-  font-size: 0.82rem;
-  color: var(--text-dim);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-faint);
 }
 
 /* Responsive -------------------------------------------------- */
 @media (max-width: 980px) {
   .hero__inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 44px;
   }
   /* Photo leads on stacked layouts. */
   .hero__visual {
@@ -334,11 +320,24 @@
 
 @media (max-width: 700px) {
   .hero {
-    padding-top: 116px;
+    padding-top: 128px;
   }
   .hero__stats {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 52px;
+    gap: 26px 0;
+    margin-top: 60px;
+  }
+  .hero__stats li:nth-child(odd) {
+    padding-left: 0;
+    border-left: none;
+  }
+  .hero__stats li:nth-child(3) {
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
+  }
+  .hero__stats li:nth-child(4) {
+    padding-top: 26px;
+    border-top: 1px solid var(--line);
   }
   .hero__actions .btn {
     flex: 1 1 100%;
@@ -349,7 +348,7 @@
   .portrait__badge {
     left: 0;
     bottom: 0;
-    padding: 6px 11px;
-    font-size: 0.65rem;
+    padding: 7px 12px;
+    font-size: 0.62rem;
   }
 }

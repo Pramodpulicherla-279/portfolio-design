@@ -1,9 +1,10 @@
 .contrib {
   margin-top: 22px;
-  padding: 26px 28px 24px;
-  border: 1px solid var(--border);
+  padding: 28px 30px 26px;
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: var(--surface);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Header ------------------------------------------------------ */
@@ -30,22 +31,23 @@
 .contrib__sub {
   margin-top: 6px;
   font-size: 0.76rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .contrib__link {
   padding: 7px 14px;
   border-radius: 8px;
-  border: 1px solid var(--border-strong);
-  background: var(--surface-2);
-  color: var(--text-dim);
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background-color: var(--surface);
+  color: var(--ink-soft);
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .contrib__link:hover {
-  color: var(--accent);
+  color: var(--accent-deep);
   border-color: var(--accent-line);
 }
 
@@ -66,7 +68,7 @@
   margin-left: 34px;
   margin-bottom: 6px;
   font-size: 0.68rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .contrib__body {
@@ -80,7 +82,7 @@
   gap: 3px;
   width: 28px;
   font-size: 0.62rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .contrib__days span {
@@ -113,7 +115,7 @@
 
 .contrib__day[data-level='0'] {
   background: var(--surface-2);
-  border-color: var(--border);
+  border-color: var(--line);
 }
 .contrib__day[data-level='1'] {
   background: color-mix(in srgb, var(--accent) 30%, var(--surface-2));
@@ -160,7 +162,7 @@
   gap: 5px;
   margin-top: 14px;
   font-size: 0.68rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .contrib__legend .contrib__day {
@@ -183,9 +185,9 @@
   flex-wrap: wrap;
   padding: 14px 16px;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   background: var(--surface-2);
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-size: 0.86rem;
 }
 

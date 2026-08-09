@@ -53,7 +53,7 @@ export default function Nav() {
           <span className="nav__mark">{profile.initials}</span>
           <span className="nav__brand-text">
             {profile.shortName}
-            <span className="nav__brand-dot">.</span>
+            <span className="nav__brand-dot" aria-hidden="true">.</span>
           </span>
         </a>
 

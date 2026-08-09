@@ -8,15 +8,16 @@
   display: flex;
   gap: 18px;
   padding: 26px 24px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .edu__card:hover {
-  border-color: var(--accent-line);
+  border-color: var(--line-strong);
   transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
 }
 
 .edu__icon {
@@ -37,14 +38,14 @@
 
 .edu__school {
   margin-top: 7px;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-size: 0.92rem;
 }
 
 .edu__meta {
   margin-top: 10px;
   font-size: 0.75rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
   letter-spacing: 0.02em;
 }
 

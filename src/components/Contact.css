@@ -14,7 +14,7 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+    color-mix(in srgb, var(--accent) 13%, transparent) 0%,
     transparent 65%
   );
   filter: blur(40px);
@@ -61,12 +61,12 @@
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   transition: color 0.2s ease;
 }
 
 .contact__links a:hover {
-  color: var(--accent);
+  color: var(--accent-deep);
 }
 
 .contact__footer {
@@ -78,9 +78,9 @@
   flex-wrap: wrap;
   margin-top: 88px;
   padding-top: 26px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
   font-size: 0.76rem;
-  color: var(--text-faint);
+  color: var(--ink-faint);
 }
 
 .contact__sep {
