@@ -21,14 +21,14 @@ export const profile = {
   tagline:
     'I build the automation that keeps web and mobile products honest — and the products themselves.',
   summary: [
-    'SDET with 1+ years of experience designing and developing end-to-end automation suites for web and mobile applications using Python, Appium and Playwright.',
+    'QA Automation Tester with 1+ years of experience designing and developing end-to-end automation suites for web and mobile applications using Python, Appium and Playwright.',
     'Builds scalable applications and RESTful services using the MERN stack and FastAPI, with experience in CI/CD integration and full-stack development.',
     'Experienced in cross-platform testing, performance/load validation and latency testing, ensuring reliable and high-quality delivery across multiple mobile applications.',
   ],
 };
 
 export const stats = [
-  { value: '1+', label: 'Years as an SDET' },
+  { value: '1+', label: 'Years as an QA Automation Tester' },
   { value: '4', label: 'Android apps automated' },
   { value: '60%', label: 'Manual regression cut' },
   { value: '3', label: 'Products shipped live' },
@@ -98,7 +98,7 @@ export const skillGroups = [
 
 export const experience = [
   {
-    role: 'SDET',
+    role: 'QA Automation Tester',
     company: 'Krishivaas',
     period: 'Dec 2024 — Present',
     duration: '1 yr 8 mos',
