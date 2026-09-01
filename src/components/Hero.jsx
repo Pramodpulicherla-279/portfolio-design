@@ -77,7 +77,7 @@ export default function Hero() {
         <div className="hero__content">
           <p className="hero__available reveal">
             <span className="hero__pulse" />
-            Open to SDET & full-stack roles
+            Open to QA Automation Tester & full-stack roles
           </p>
 
           <h1 className="hero__name reveal" style={{ transitionDelay: '60ms' }}>
@@ -85,7 +85,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__role reveal" style={{ transitionDelay: '120ms' }}>
-            <span className="hero__role-tag">SDET</span>
+            <span className="hero__role-tag">QA Automation Tester</span>
             <span className="hero__role-sep" aria-hidden="true">/</span>
             <span className="hero__role-tag">Full-Stack Developer</span>
           </p>

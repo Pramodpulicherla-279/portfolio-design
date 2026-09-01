@@ -1,6 +1,6 @@
 # Pramod Pulicherla — Portfolio
 
-Personal portfolio for **Pramod Pulicherla**, SDET and full-stack developer. Built with React 19
+Personal portfolio for **Pramod Pulicherla**, Automation Tester and full-stack developer. Built with React 19
 and Vite, deployed to GitHub Pages.
 
 **Live:** https://Pramodpulicherla-279.github.io/portfolio-design/
@@ -35,7 +35,7 @@ The dev server runs on http://localhost:3000.
 index.html                 Vite entry HTML
 vite.config.js             base path for GitHub Pages, dev server config
 public/
-  Pramod-Pulicherla-SDET.pdf   downloadable résumé
+  Pramod-Automation-Tester.pdf   downloadable résumé
   favicon.svg
 src/
   main.jsx                 React root
@@ -56,7 +56,7 @@ Everything the site displays — summary, skills, experience bullets, projects, 
 details — comes from [`src/data/profile.js`](src/data/profile.js). Edit that one file; the
 components render whatever it contains.
 
-To swap the résumé PDF, replace `public/Pramod-Pulicherla-SDET.pdf` and update `profile.resumeFile`
+To swap the résumé PDF, replace `public/Pramod-Automation-Tester.pdf` and update `profile.resumeFile`
 if the filename changes.
 
 ## Deploying

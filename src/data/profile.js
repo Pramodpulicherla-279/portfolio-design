@@ -2,8 +2,8 @@ export const profile = {
   name: 'Pramod Pulicherla',
   shortName: 'Pramod',
   initials: 'PP',
-  role: 'SDET',
-  roleLong: 'SDET & Full-Stack Developer',
+  role: 'QA Automation Tester',
+  roleLong: 'Automation Tester & Full-Stack Developer',
   location: 'Hyderabad, Telangana',
   email: 'pramodpulicherla350@gmail.com',
   phone: '+91 7660852538',
@@ -15,7 +15,7 @@ export const profile = {
   // This is a CORS-enabled public mirror of that GraphQL query.
   contributionsApi: 'https://github-contributions-api.jogruber.de/v4',
   linkedin: 'https://www.linkedin.com/in/pramod-pulicherla-0113b916a/',
-  resumeFile: 'Pramod-Pulicherla-SDET.pdf',
+  resumeFile: 'Pramod-Automation-Tester.pdf',
   photo: 'pramod-hero.png',
   photoWebp: 'pramod-hero.webp',
   tagline:

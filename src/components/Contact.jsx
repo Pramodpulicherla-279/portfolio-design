@@ -16,7 +16,7 @@ export default function Contact() {
             Got a suite that needs building — or breaking?
           </h2>
           <p className="section-sub contact__sub">
-            I'm open to SDET and full-stack roles, and happy to talk through automation strategy for
+            I'm open to QA Automation Tester and full-stack roles, and happy to talk through automation strategy for
             an existing product. The inbox is always the fastest route.
           </p>
         </div>
